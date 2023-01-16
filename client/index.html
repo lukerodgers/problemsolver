@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <title>Answerbot - Your problems solved</title>
+  </head>
+  <body>
+  
+    <div class="container-fluid">
+      <div class="row d-flex align-items-start">
+        <div class="col-sm-2">
+          <img class="left m-4" width="" height="75px" src="https://i.ibb.co/prYWwQz/Problem-Solver-Logo-copy.png">
+        </div>
+    
+        <div class="mt-4">
+          <h6>Problem statement</h6>
+          <form id="prompt-form" class="" onsubmit="handleSubmit(event)">
+            <div id="" class="form-group col-sm-7 d-flex justify-content-between">
+              <input type="text" class="form-control col-md-auto" id="prompt" placeholder="I can't find my keys...">
+
+              <div id="" class="col-md-auto">
+                <button type="submit" class="btn btn-primary orange-button" value="Submit">Submit</button>
+              </div>
+
+              <div class="col-md-auto" >
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2">
+                      <h6>Outputs</h6>
+                    </th>
+                  </tr>
+                </thead>
+                <table class="table table-sm">
+                
+                  <tbody>
+                    <tr>
+                      <td>
+                        <!-- SOLUTIONS CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="solutionsCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="solutionsCheckbox">
+                            Solutions
+                          </label>
+                        </div>
+                      </td>    
+                      <td>          
+                      <!-- GOALS CHECKBOX -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="goalsCheckbox"  data-initial="true">
+                        <label class="form-check-label" for="goalsCheckbox">
+                          Goals
+                        </label>
+                      </div>
+                      </td>  
+                    </tr>    
+                    <tr>
+                      <td>
+                        <!-- DELIVERABLES CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="delsCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="delsCheckbox">
+                            Deliverables
+                          </label>
+                        </div>
+                      </td>
+                      <td>                  
+                        <!-- MILESTONES CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="milestonesCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="milestonesCheckbox">
+                            Milestones
+                          </label>
+                        </div>
+                      </td> 
+                    </tr>
+                    <tr>
+                      <td>
+                                                
+                        <!-- IMPLEMENTATION PLAN CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="impplanCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="impplanCheckbox">
+                            Implementation Plan
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- CHANGE PLAN CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="changeplanCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="changeplanCheckbox">
+                            Change Plan
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <!-- METRICS CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="metricsCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="metricsCheckbox">
+                            Metrics
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- OPPORTUNITIES CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="oppsCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="oppsCheckbox">
+                            Opportunities
+                          </label>
+                        </div>
+                      </td>
+                    </tr>       
+                    <tr>
+                      <td>
+                        <!-- THREATS CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="threatsCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="threatsCheckbox">
+                            Threats
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- BENEFITS CHECKBOX -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="benefitsCheckbox"  data-initial="true">
+                          <label class="form-check-label" for="benefitsCheckbox">
+                            Benefits
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+
+      <!-- PROBLEM DIV -->
+
+      <div class="row m-2">
+        <div class="card col-sm-12 px-0" id="prompt-card">
+          <div class="card-header px-2" id="prompt-card-header">
+            Problem
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="prompt-div"></div>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row m-2"> 
+
+        <!-- SOLUTIONS DIV -->
+          
+        <div class="card col-sm px-0" id="solutions-card">
+          <div class="card-header px-2" id="solutions-card-header">
+            Solutions
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="solutions-div"></div>
+          </ul>
+        </div>
+
+        <!-- GOALS DIV -->
+          
+        <div class="card col-sm px-0" id="goals-card">
+            <div class="card-header px-2" id="goals-card-header">
+              Waffle
+            </div>
+            <ul class="list-group list-group-flush">
+              <div class="px-2" id="goals-div"></div>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row m-2"> 
+
+        <!-- DELIVERABLES DIV -->
+          
+        <div class="card col-sm px-0" id="dels-card">
+          <div class="card-header px-2" id="dels-card-header">
+            Deliverables
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="dels-div"></div>
+          </ul>
+        </div>
+
+        <!-- MILESTONES DIV -->
+          
+        <div class="card col-sm px-0" id="milestones-card">
+            <div class="card-header px-2" id="milestones-card-header">
+              Milestones
+            </div>
+            <ul class="list-group list-group-flush">
+              <div class="px-2" id="milestones-div"></div>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row m-2">     
+        <!-- IMPLEMENTATION PLAN DIV -->
+          
+        <div class="card col-sm px-0" id="impplan-card">
+          <div class="card-header px-2" id="impplan-card-header">
+            Implementation Plan
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="impplan-div"></div>
+          </ul>
+        </div>
+          
+        <!-- CHANGE PLAN DIV -->
+
+        <div class="card col-sm px-0" id="changeplan-card">
+          <div class="card-header px-2" id="changeplan-card-header">
+            Change Plan
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="changeplan-div"></div>
+          </ul>
+        </div>
+      </div>   
+      
+      <div class="row m-2"> 
+        <!-- METRICS DIV -->
+          
+        <div class="card col-sm px-0" id="metrics-card">
+          <div class="card-header px-2" id="metrics-card-header">
+            Metrics
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="metrics-div"></div>
+          </ul>
+        </div>
+          
+        <!-- OPPORTUNITIES DIV -->
+          
+        <div class="card col-sm px-0" id="opps-card">
+            <div class="card-header px-2" id="opps-card-header">
+              Opportunities
+            </div>
+            <ul class="list-group list-group-flush">
+              <div class="px-2" id="opps-div"></div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row m-2"> 
+        <!-- THREATS DIV -->
+
+        <div class="card col-sm px-0" id="threats-card">
+          <div class="card-header px-2" id="threats-card-header">
+            Threats
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="threats-div"></div>
+          </ul>
+        </div>
+          
+        <!-- BENEFITS DIV -->
+          
+        <div class="card col-sm px-0" id="benefits-card">
+          <div class="card-header px-2" id="benefits-card-header">
+            Benefits
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="px-2" id="benefits-div"></div>
+          </ul>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+
+    
+  </body>
+</html>

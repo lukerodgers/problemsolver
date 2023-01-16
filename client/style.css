@@ -1,0 +1,29 @@
+.orange-button {
+  background-color: #6d49db;
+  color: white;
+  border-color: #6d49db;
+}
+
+.orange-button:hover {
+  background-color: #5f3dc5;
+  border-color: #5f3dc5;
+}
+
+
+
+/* #prompt-card {
+  border: 1px solid #005f73;
+}
+
+#prompt-card-header {
+  background-color: #005f73;
+}
+
+#solutions-card-header, #benefits-card-header {
+  background-color: #bb3e03;
+}
+
+#solutions-card, #benefits-card {
+  border: 1px solid #bb3e03;
+} */
+
